@@ -89,7 +89,7 @@ app.get('/bmi', (req, res)=>{
             bmiCategory
         })
     }else{
-        res.json(familyWithBMI);
+        res.json(familyWithBMI); 
     }
 });
 
