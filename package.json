@@ -1,0 +1,17 @@
+{
+  "name": "day_20",
+  "version": "1.0.0",
+  "description": "review js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Arkan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
