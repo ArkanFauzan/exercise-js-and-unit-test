@@ -1,5 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+const port = process.env.PORT || 3000;
+
+// using cors middleware
+app.use(cors());
+
 app.use(express.json())
 
 /*
@@ -78,8 +85,8 @@ app.get('/profile',(req,res)=>{
 
 app.get('/bmi', (req, res)=>{
     if (req.query.name!=undefined && req.query.height!=undefined && req.query.weight!=undefined) {
-        bmi = calculateBMI(req.query.height, req.query.weight).toFixed(1);
-        bmiCategory = categoryBMI(bmi);
+        let bmi = calculateBMI(req.query.height, req.query.weight).toFixed(1);
+        let bmiCategory = categoryBMI(bmi);
 
         res.json({
             name : req.query.name,
@@ -99,14 +106,15 @@ app.get('/bmi', (req, res)=>{
 
 app.post('/bmi', (req, res)=>{
     if (req.body.name!=undefined && req.body.height!=undefined && req.body.weight!=undefined) {
-        bmi = calculateBMI(req.body.height, req.body.weight).toFixed(1);
-        bmiCategory = categoryBMI(bmi);
+        let bmi = calculateBMI(req.body.height, req.body.weight).toFixed(1);
+        let bmiCategory = categoryBMI(bmi);
+        let height = req.body.height<10 ? req.body.height*100 : req.body.height;
 
         res.json({
             name : req.body.name,
-            height : parseFloat(req.body.height),
+            height : parseFloat(height),
             weight : parseFloat(req.body.weight),
-            bmi: parseFloat(bmi),
+            bmi: parseFloat(bmi).toFixed(1),
             bmiCategory
         })
     }else{
@@ -147,8 +155,8 @@ app.post('/exchange',(req, res)=>{
     return
 })
 
-app.listen(3000,()=>{
-    console.log("App is running at http://localhost:3000")
+app.listen(port,()=>{
+    console.log(`App is running at http://localhost:${port}}`)
 })
 
 module.exports={

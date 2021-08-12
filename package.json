@@ -4,14 +4,17 @@
   "description": "review js",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node exercise-arkan.js"
   },
   "author": "Arkan",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "jest": "^27.0.6"
   }
 }
