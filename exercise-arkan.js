@@ -79,6 +79,10 @@ console.log();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~    Exercise 10, 11, dan 12   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
+app.get('/',(req,res)=>{
+    res.send('to use this API: request = post, body: name,height,weight (height in scm & weight in kg)')
+})
+
 app.get('/profile',(req,res)=>{
     res.json(family);
 });
