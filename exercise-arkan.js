@@ -158,7 +158,7 @@ app.post('/exchange',(req, res)=>{
 app.listen(port,()=>{
     console.log(`App is running at http://localhost:${port}}`)
 })
-
+ 
 module.exports={
     calculateBMI, categoryBMI
 }
