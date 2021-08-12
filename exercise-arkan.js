@@ -80,7 +80,7 @@ console.log();
 */
 
 app.get('/',(req,res)=>{
-    res.send('to use this API: request = post, body: name,height,weight (height in cm & weight in kg)')
+    res.send('to use this API: request: post, route: /bmi, body: name,height,weight (height in cm & weight in kg)')
 })
 
 app.get('/profile',(req,res)=>{
